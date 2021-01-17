@@ -99,11 +99,12 @@ while True:
                 # print(f"shape of face :{face.shape}")
                 gray_frame[startY:endY, startX:endX] = decode_face
                 decode_frame = cv2.resize(decode_face, (400, 400))
+                cv2.imshow("VAE_o/p", decode_frame)
             except:
                 continue
             
             orig_frame = cv2.resize(orig_face, (400, 400))
-        cv2.imshow("VAE_o/p", decode_frame)
+        
         cv2.imshow('Original', orig_frame)        
         key = cv2.waitKey(1) & 0xFF
         
