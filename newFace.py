@@ -3,8 +3,6 @@ import cv2
 import os
 import imutils
 from tensorflow.keras.models import load_model
-from tensorflow.python.keras.backend import shape
-from tensorflow.python.saved_model.function_deserialization import _deserialize_function_spec_as_nonmethod
 
 
 
@@ -92,6 +90,7 @@ while True:
             # gray_frame[startY:endY, startX:endX] = np.zeros(shape=face.shape)
             orig_face = face.copy()
             try:
+                print("inside try")
                 decode_face = send_data(face)      
                 decode_face = cv2.resize(decode_face, face.shape[::-1])          
                 
